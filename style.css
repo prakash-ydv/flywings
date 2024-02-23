@@ -101,6 +101,39 @@ nav ul li a {
     font-size: 23px;
 }
 
+.rating {
+    display: inline-block;
+    font-size: 1em;
+}
+
+.star {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('star.png'); /* Replace 'star.png' with the path to your star image */
+    background-size: contain;
+}
+.halfstar {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('rating.png'); /* Replace 'star.png' with the path to your star image */
+    background-size: contain;
+}
+
+#rating{
+    color: rgb(18, 18, 223);
+    font-size: 15px;
+}
+
+#delivery-date{
+    font-weight: 600;
+    font-size: 17px;
+    color: rgb(205, 39, 39);
+    background-color: #f0f0f0;
+}
+
+
 select {
     margin-right: 12px;
     padding: 13px;

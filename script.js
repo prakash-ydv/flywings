@@ -1,37 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var buyNowBtn = document.getElementById('buy-now-btn');
-    buyNowBtn.addEventListener('click', function() {
-        console.log("Buy Now") ;
+    buyNowBtn.addEventListener('click', function () {
+        window.location.href = 'https://razorpay.com/payment-button/pl_NeL5SlrHVTCnJu/view/?utm_source=payment_button&utm_medium=button&utm_campaign=payment_button';
     });
 
     var menuToggle = document.querySelector('.menu-toggle');
     var nav = document.querySelector('nav ul');
 
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function () {
         nav.classList.toggle('show');
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var timerElement = document.getElementById('timer');
+var today = new Date();
 
-    function startTimer(duration) {
-        var timer = duration, minutes, seconds;
-        setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
+// Add 4 days to today's date
+var deliveryDate = new Date(today);
+deliveryDate.setDate(deliveryDate.getDate() + 4);
 
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+// Format the delivery date as "Day, Month Date, Year"
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+var formattedDeliveryDate = deliveryDate.toLocaleDateString('en-US', options);
 
-            timerElement.textContent = minutes + ":" + seconds;
-
-            if (--timer < 0) {
-                timer = duration;
-            }
-        }, 1000);
-    }
-
-    startTimer(14 * 60);
-});
+// Display the formatted delivery date on the page
+document.getElementById('delivery-date').textContent = 'Expected Delivery : ' + formattedDeliveryDate;
 
